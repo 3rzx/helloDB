@@ -18,12 +18,12 @@ public class TestAdmin {
   @Rule
   public TestName name = new TestName();
   private static final Properties PROP = new Properties();
-  private static Admin ADMIN;
+  private static SimpleAdmin ADMIN;
 
   @BeforeClass
   public static void setUpClass() throws Exception {
     PROP.put(Admin.ADMIN_IMPL, Admin.DEFAULT_ADMIN_IMPL);
-    ADMIN = Admin.create(PROP);
+    ADMIN = (SimpleAdmin) Admin.create(PROP);
   }
 
   @AfterClass
